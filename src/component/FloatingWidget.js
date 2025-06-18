@@ -75,7 +75,7 @@ export default function FloatingWidget() {
           <div style={{ fontWeight: 'bold', fontSize: 18, marginBottom: 8 }}>Bear Hunter‘s Manual</div>
           <div>
             使用鍵盤的上下左右鍵操控爪子，按下空白鍵來抓取熊熊！<br />
-            「懶懶熊」、「胖胖熊」、「酷酷熊」正等著你來發現，但是如果運氣不好的話，可能會一直遇到“消失熊”喔！
+            「懶懶熊」、「胖胖熊」、「酷酷熊」正等著你來發現，但是如果運氣不好的話，可能會一直遇到「消失熊」喔！
           </div>
         </div>
       )}
