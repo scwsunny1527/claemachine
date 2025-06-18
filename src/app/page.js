@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useRef } from "react";
-import StartPage from "@/component/StartPage"; // 確認路徑正確
 import FloatingWidget from "@/component/FloatingWidget";
 import MusicButton from "@/component/MusicButton";
 import ResetButton from "@/component/ResetButton";
@@ -54,7 +53,7 @@ const goneBear = {
   img: "/44.webp",
 };
 
-// ResultModal 元件 - 模糊背景，標題橘色，名字與描述黑色，引用藍色
+// ResultModal 元件
 function ResultModal({ isWin, prizeIndex, onClose }) {
   const currentBear = isWin ? bearTypes[prizeIndex] : goneBear;
 
@@ -267,8 +266,11 @@ export default function Home() {
 
   if (!started) {
     return (
-      <div className="w-full min-h-[100vh] flex flex-col justify-center items-center bg-gradient-to-br from-[#e0f0ff] to-[#6ec1e4] select-none font-sans text-black">
-        <div className="border-4 border-black bg-white px-6 py-6 rounded-none shadow-[4px_4px_0px_#222] mb-8 max-w-[420px] w-full flex flex-col items-center text-center">
+      <div
+        className="w-full min-h-[100vh] flex flex-col justify-center items-center bg-cover bg-center select-none font-sans text-black"
+        style={{ backgroundImage: "url('/bg.webp')" }}
+      >
+        <div className="border-4 border-black bg-white bg-opacity-80 px-6 py-6 rounded-none shadow-[4px_4px_0px_#222] mb-8 max-w-[420px] w-full flex flex-col items-center text-center">
           <h1 className="text-3xl font-extrabold mb-2">Welcome to Wawa Machine World!</h1>
           <p className="text-base font-medium leading-relaxed">
             帶走你的煩惱，放鬆心情，享受趣味娃娃機的樂趣！
@@ -276,13 +278,14 @@ export default function Home() {
         </div>
         <button
           onClick={() => setStarted(true)}
-          className="w-[180px] bg-[#6ec1e4] border-4 border-black rounded-none text-black font-bold py-4 shadow-[4px_4px_0px_#222] hover:bg-[#3b9edb] hover:shadow-[8px_8px_0_#222] hover:-translate-y-1 hover:scale-105 transition text-center"
+          className="w-[180px] bg-[#6ec1e4] border-4 border-black rounded-none text-black font-bold py-4 shadow-[4px_4px_0px_#222] hover:bg-[#3b9edb] hover:shadow-[8px_8px_0px_#222] hover:-translate-y-1 hover:scale-105 transition text-center"
         >
           開始遊戲
         </button>
       </div>
     );
   }
+  
 
   return (
     <div
@@ -350,7 +353,13 @@ export default function Home() {
           { name: "jump", keys: ["Space"] },
         ]}
       >
-        <Canvas shadows dpr={[1, 1]} style={{ imageRendering: "pixelated" }}>
+        <Canvas
+          shadows
+          dpr={[1, 1]}
+          style={{ imageRendering: "pixelated", background: "transparent" }}
+          gl={{ preserveDrawingBuffer: true, alpha: true }}
+        >
+          <color attach="background" args={["transparent"]} />
           <ambientLight intensity={Math.PI / 2} />
           <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
           <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
@@ -397,6 +406,7 @@ export default function Home() {
           />
 
           <CameraControls enablePan={false} enableZoom={false} />
+          {/* axesHelper 已移除 */}
         </Canvas>
       </KeyboardControls>
 

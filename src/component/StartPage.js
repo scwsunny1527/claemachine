@@ -9,6 +9,7 @@ export default function StartPage({ onStart }) {
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
+        backgroundColor: "transparent"
       }}
     >
       {/* 內容 */}
