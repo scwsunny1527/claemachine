@@ -267,8 +267,13 @@ export default function Home() {
   if (!started) {
     return (
       <div
-        className="w-full min-h-[100vh] flex flex-col justify-center items-center bg-cover bg-center select-none font-sans text-black"
-        style={{ backgroundImage: "url('/bg.webp')" }}
+        className="w-full min-h-[100vh] flex flex-col justify-center items-center select-none font-sans text-black"
+        style={{
+          backgroundImage: "url('/bg.webp')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
       >
         <div className="border-4 border-black bg-white bg-opacity-80 px-6 py-6 rounded-none shadow-[4px_4px_0px_#222] mb-8 max-w-[420px] w-full flex flex-col items-center text-center">
           <h1 className="text-3xl font-extrabold mb-2">Welcome to Wawa Machine World!</h1>
@@ -285,20 +290,19 @@ export default function Home() {
       </div>
     );
   }
-  
 
   return (
     <div
       style={{
         width: "100vw",
         height: "100vh",
-        background: "linear-gradient(135deg, #e0f0ff 0%, #6ec1e4 100%)",
+        background: "linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%)",
         fontFamily:
           'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
         color: "#000",
         userSelect: "none",
-        position: "relative",
         overflow: "hidden",
+        position: "relative",
       }}
     >
       {/* 左上角控制區 */}
@@ -378,13 +382,8 @@ export default function Home() {
             <ClawModel clawPos={clawPos} isLowering={isLowering} hasPrize={hasPrize} prizeIndex={prizeIndex} />
           </Suspense>
 
-          <Environment
-            background={true}
-            backgroundBlurriness={0.5}
-            backgroundIntensity={1}
-            environmentIntensity={1}
-            preset={"city"}
-          />
+          {/* 啟用城市 HDRI 環境背景 */}
+          <Environment background={true} preset="park" />
 
           <ContactShadows opacity={1} scale={10} blur={10} far={10} resolution={256} color="#222" />
 
@@ -406,7 +405,6 @@ export default function Home() {
           />
 
           <CameraControls enablePan={false} enableZoom={false} />
-          {/* axesHelper 已移除 */}
         </Canvas>
       </KeyboardControls>
 
