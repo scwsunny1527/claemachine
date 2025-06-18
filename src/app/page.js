@@ -198,22 +198,19 @@ function Camera({
         setIsLowering(true);
 
         const random = Math.random();
-        let isWin = false;
-        let prizeIdx = -1;
+let isWin = false;
+let prizeIdx = -1;
 
-        if (random < 0.15) {
-          isWin = true;
-          prizeIdx = 0;
-        } else if (random < 0.3) {
-          isWin = true;
-          prizeIdx = 1;
-        } else if (random < 0.45) {
-          isWin = true;
-          prizeIdx = 2;
-        } else {
-          isWin = false;
-          prizeIdx = -1;
-        }
+if (random < 0.25) {
+  // 25% 失敗
+  isWin = false;
+  prizeIdx = -1;
+} else {
+  // 75% 成功，三隻熊均等
+  isWin = true;
+  prizeIdx = Math.floor(Math.random() * 3); // 0, 1, 2
+}
+
 
         gsap.timeline()
           .to(clawPos, { y: 2, duration: 2 })
