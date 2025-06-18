@@ -23,23 +23,23 @@ import React, { Suspense } from "react";
 // 熊娃娃資料
 const bearTypes = [
   {
-    name: "Lazy Bear（懶懶熊）",
+    name: "Lazy Bear - 懶懶熊",
     description:
-      "慢吞吞、最愛打瞌睡，什麼都懶得動。垂垂的眼睛、鬆軟的肚肚、常抱著枕頭或毛毯。",
+      "慢吞吞、最愛打瞌睡，什麼都懶得動。垂垂的眼睛、鬆軟的肚肚、隨時準備進入夢鄉。",
     quote: "“Can I nap here forever...?”",
     img: "/41.webp",
   },
   {
-    name: "Chubby Bear（胖胖熊）",
+    name: "Chubby Bear - 胖胖熊",
     description:
-      "超愛吃，總在找甜甜圈或蜂蜜。圓滾滾、有顆閃亮的鼻子，嘴邊常沾點糖霜。",
+      "永遠手拿著甜點，嘴巴總是不停地吃。圓滾滾、有顆閃亮的鼻子，嘴邊常沾點糖霜。",
     quote: "“Snack first, everything later!”",
     img: "/42.webp",
   },
   {
-    name: "Coolio Bear（酷熊）",
+    name: "Coolio Bear - 酷酷熊",
     description:
-      "帥氣自信、喜歡滑板和音樂，走到哪都很有風格。戴墨鏡、耳機或棒球帽。",
+      "酷到不行，戴著墨鏡，走路不看風景。帥氣自信，永遠是焦點，走到哪都是注目禮。",
     quote: "“Stay chill, stay cool.”",
     img: "/43.webp",
   },
@@ -47,9 +47,9 @@ const bearTypes = [
 
 // 沒中獎角色
 const goneBear = {
-  name: "Gone Bear（消失熊）",
+  name: "Gone Bear - 消失熊",
   description:
-    "他不是你錯過的娃娃，而是「你沒夾到的空氣本身」，他從來不在機台裡。沒人見過他，永遠出現在「沒有出現」的那一刻。",
+    "他不是你錯過的熊熊，而是「你沒夾到的空氣本身」，他從來不在機台裡。沒人見過他，永遠出現在「沒有出現」的那一刻。",
   img: "/44.webp",
 };
 
@@ -91,7 +91,7 @@ function ResultModal({ isWin, prizeIndex, onClose }) {
           className="font-extrabold text-2xl mb-2"
           style={{ textShadow: "none", color: "#ff6600" }}
         >
-          {isWin ? "中獎了" : "沒中獎"}
+          {isWin ? "Congratulations!" : "OH NO!"}
         </h2>
         <h3
           className="font-bold text-xl mb-2"
@@ -276,9 +276,9 @@ export default function Home() {
         }}
       >
         <div className="border-4 border-black bg-white bg-opacity-80 px-6 py-6 rounded-none shadow-[4px_4px_0px_#222] mb-8 max-w-[420px] w-full flex flex-col items-center text-center">
-          <h1 className="text-3xl font-extrabold mb-2">Welcome to Wawa Machine World!</h1>
+          <h1 className="text-3xl font-extrabold mb-2">Welcome to the World of Wawa Machines!</h1>
           <p className="text-base font-medium leading-relaxed">
-            帶走你的煩惱，放鬆心情，享受趣味娃娃機的樂趣！
+          快來解鎖娃娃機裡的熊熊，每隻都在等你帶回家！
           </p>
         </div>
         <button

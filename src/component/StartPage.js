@@ -14,9 +14,9 @@ export default function StartPage({ onStart }) {
     >
       {/* 內容 */}
       <div className="border-4 border-black bg-white bg-opacity-80 px-6 py-6 rounded-none shadow-[4px_4px_0px_#222] mb-8 max-w-[420px] w-full flex flex-col items-center text-center">
-        <h1 className="text-3xl font-extrabold mb-2">Welcome to Wawa Machine World!</h1>
+        <h1 className="text-3xl font-extrabold mb-2">Welcome to the World of Wawa Machines!</h1>
         <p className="text-base font-medium leading-relaxed">
-          帶走你的煩惱，放鬆心情，享受趣味娃娃機的樂趣！
+        快來解鎖娃娃機裡的熊熊，每隻都在等你帶回家！
         </p>
       </div>
       <button
